@@ -55,14 +55,14 @@ public class BasicAuthUsingCustomJdbcUserDetails {
   public void setup() {
     spring.register(SecurityConfigWithDefaults.class).autowire();
 
-    Optional<AppUser> user = repo.findByEmail("user@email.com");
-    if (user.isPresent() == false) {
-      AppUser appUser = new AppUser();
-      appUser.setPassword("$2a$10$dXJ3SW6G7P50lGmMkkmwe.20cQQubK3.HZWzG3YB1tlRy.fqvM/BG");
-      appUser.setUsername("user");
-      appUser.setEmail("user@email.com");
-      repo.save(appUser);
-    }
+//    Optional<AppUser> user = repo.findByEmail("user@email.com");
+//    if (user.isPresent() == false) {
+//      AppUser appUser = new AppUser();
+//      appUser.setPassword("$2a$10$dXJ3SW6G7P50lGmMkkmwe.20cQQubK3.HZWzG3YB1tlRy.fqvM/BG");
+//      appUser.setUsername("user");
+//      appUser.setEmail("user@email.com");
+//      repo.save(appUser);
+//    }
   }
 
   @Test

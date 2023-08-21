@@ -1,15 +1,11 @@
 package com.howtodoinjava.demo.web;
 
-import com.howtodoinjava.demo.security.basicauth.AppBasicAuthenticationEntryPoint;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.BadCredentialsException;
-import org.springframework.security.core.AuthenticationException;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.request.RequestContextHolder;
 
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
+import com.howtodoinjava.demo.security.basicauth.AppBasicAuthenticationEntryPoint;
 
 @RestController
 public class AppController {
@@ -19,6 +15,8 @@ public class AppController {
 
   @GetMapping("/")
   public String home(){
+	String sessionId = RequestContextHolder.currentRequestAttributes().getSessionId();
+	System.out.println("JSession ID "+ sessionId);
     return "Hello World !!";
   }
 

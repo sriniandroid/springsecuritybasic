@@ -10,14 +10,17 @@ public class AppUser {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
-  private String email;
-  private String username;
+  private String email; 
   private String password;
+   
+  
+  public AppUser(String email, String password) {
+	super();
+	this.email = email;
+	this.password = password;
+}
 
-  public AppUser() {
-  }
-
-  public Long getId() {
+public Long getId() {
     return id;
   }
 
@@ -31,14 +34,6 @@ public class AppUser {
 
   public void setEmail(String email) {
     this.email = email;
-  }
-
-  public String getUsername() {
-    return username;
-  }
-
-  public void setUsername(String username) {
-    this.username = username;
   }
 
   public String getPassword() {
